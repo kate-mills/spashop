@@ -84,11 +84,6 @@ img {
   font-size: 1.7rem;
   margin-top: 3rem;
   letter-spacing: var(--mainSpacing);
-  color: var(--primaryDarkColor);
-}
-
-.loading h3{
-  font-weight: 200 !important;
 }
 .loading img {
   width: 10rem;
@@ -191,18 +186,14 @@ Hero
   min-height: calc(65vh);
   background: linear-gradient(
       to right,
-      rgba(116, 149, 171, 0.1) 1%,
+      rgba(0, 0, 0, 0.7) 50%,
       rgba(255, 255, 255, 0.1)
     ),
-    url("./assets/black-feather.jpg") top/cover no-repeat;
+    url("./assets/mainBcg.jpeg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--primaryColor);
-}
-.cursive {
-  font-family: var(--cursiveFont);
-  color: black;
+  color: var(--primaryDarkColor);
 }
 .banner {
   width: var(--smallWidth);
@@ -222,12 +213,12 @@ Hero
   border-radius: 0;
   font-weight: bold;
   padding: 0.8rem 1.5rem;
-  background: var(--primaryColor);
-  border-color: var(--primaryColor);
+  background: var(--primaryDarkColor);
+  border-color: var(--primaryDarkColor);
   color: var(--mainBlack);
 }
 .btn-hero:hover {
-  color: var(--primaryColor);
+  color: var(--primaryDarkColor);
 }
 @media screen and (min-width: 768px) {
   .banner {
@@ -558,12 +549,6 @@ Login Button
 .login-btn:hover {
   color: var(--primaryColor);
 }
-.login-username{
-  color: var(--primaryDarkColor);
-  max-width: 50px;
-  overflow: none;
-
-}
 @media screen and (min-width: 768px) {
   .login-btn {
     font-size: 1.5rem;
@@ -659,8 +644,8 @@ Scroll Button
   position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
-  background: var(--mainBlack);
-  color: var(--mainWhite);
+  background:transparent; 
+  color: var(--primaryDarkColor);
   z-index: -100;
   opacity: 0;
   transition: var(--mainTransition);
@@ -668,6 +653,8 @@ Scroll Button
   line-height: 0;
   padding: 0.3rem 0.5rem;
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 .show-scroll-btn {
   z-index: 100;
@@ -793,7 +780,6 @@ Filters Section
   padding: 0 2rem;
 }
 
-
 /* 
    loading gif icon 
 
@@ -815,4 +801,26 @@ Filters Section
 svg path,
 svg rect{
   fill: var(--primaryDarkColor);
+}
+.cursive {
+  font-family: var(--cursiveFont);
+  color: black;
+}
+/* 
+====== 
+Hero
+======
+*/
+.hero {
+  min-height: calc(65vh);
+  background: linear-gradient(
+      to right,
+      rgba(116, 149, 171, 0.1) 1%,
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("./assets/black-feather.jpg") top/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primaryColor);
 }

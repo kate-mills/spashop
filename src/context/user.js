@@ -13,6 +13,20 @@ const UserProvider = ({children})=>{
 
   const [user, setUser] = React.useState(getUserFromLocalStorage());
 
+  const [height, setHeight] = React.useState(0);
+
+  React.useEffect(()=>{
+    window.addEventListener('scroll', ()=>{
+      setHeight(window.pageYOffset);
+    })
+    return ()=>{
+      // Cleanup fn not necessary on context components, because root component never unmounts.
+      // But very necessary on components not attached to root.
+      return window.removeEventListener('scroll', ()=>{})
+    }
+  }, [])
+
+
   const userLogin = user => {
     setUser(user);
     localStorage.setItem('user', JSON.stringify(user));
@@ -32,7 +46,7 @@ const UserProvider = ({children})=>{
     setAlert({...alert, show:false})
   }
 
-  return <UserContext.Provider value={{user, userLogin, userLogout, alert, showAlert, hideAlert}}>
+  return <UserContext.Provider value={{user, userLogin, userLogout, alert, showAlert, hideAlert, height}}>
     {children}
   </UserContext.Provider>
 }

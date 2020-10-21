@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from './components/Header'
 import Alert from './components/Alert'
 import PrivateRoute from './components/PrivateRoute'
+import ScrollButton from './components/ScrollButton'
 
 import About from './pages/About'
 import Cart from './pages/Cart'
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/products/:id"><ProductDetails/></Route>
         <Route path="*"><Error/></Route>
       </Switch>
+      <ScrollButton/>
     </Router>
   )
 }
