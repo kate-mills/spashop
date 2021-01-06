@@ -1,6 +1,6 @@
 // products context
 import React from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 
 //import url from '../utils/URL'
 import localProducts from '../utils/localCart.js'
@@ -16,20 +16,10 @@ const ProductProvider = ({children}) => {
   const [featured, setFeatured] = React.useState([])
 
   React.useEffect(()=>{
-    /*axios
-      .get(`${url}/products`)
-      .then(response =>{
-        const featuredProducts = filterForFeaturedProducts(flattenProducts(response.data))
-        const products = flattenProducts(response.data)
-        setProducts( ((prev) => products)) 
-        setFeatured(featuredProducts)
-        setLoading(false)
-      });*/
     const featuredProducts = filterForFeaturedProducts(localProducts)
     setProducts((prev)=>localProducts)
     setFeatured((prev)=>featuredProducts)
     setLoading(false)
-    return ()=>{ }
   }, []);
 
   return(
