@@ -1,26 +1,27 @@
 export default [
   {
     id: 1,
-    title: "mac vintage computer",
-    price: 200.99,
+    title: "Pore Clearing Cleansing Oil",
+    price: 24.00,
     image:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574719863/iorxuhfensblqhn6jy5d.png",
+      "https://images.ctfassets.net/42crzdn8wqcc/i9ePnEzbliJPqODmaYDP1/1c9205ad30c7769a87968013467c87e9/pccoil-retail.jpg?w=800&h=800&q=100",
     amount: 3
   },
   {
     id: 2,
-    title: "compaq vintage computer",
-    price: 40.99,
+    title: "Eye Cream",
+    price: 56.00,
     image:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574624417/vx64ovkpz9nu98tqdtzn.png",
+      "https://images.ctfassets.net/42crzdn8wqcc/3TOSHRlLQtFB2mrzFtzBVc/a7bd61bd9c8153689391be74cd5a7b46/rareye-retail.jpg?w=800&h=800&q=100",
     amount: 5
   },
   {
     id: 3,
-    title: "commodore 64 vintage computer",
-    price: 129.99,
+    title: "Brighten & Restore",
+    price: 60.00,
     image:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574720064/ousbxxs7ohhddd3wz18k.png",
-    amount: 4
+      "https://images.ctfassets.net/42crzdn8wqcc/6TxxgZMRwOYOytRUjzUjR8/f52a8a2c5cb7c411659fc8bfd619f85c/bandr.jpg?w=800&h=800&q=100",
+    amount: 4,
+    featured: true,
   }
 ];

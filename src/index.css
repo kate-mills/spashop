@@ -409,7 +409,7 @@ Cart
 .cart-item {
   display: grid;
   align-items: center;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 2fr 1fr auto;
   grid-column-gap: 1.5rem;
   margin: 1.5rem 0;
 }
@@ -434,12 +434,14 @@ Cart
   background: transparent;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 .remove-btn {
   color: var(--darkGrey);
   letter-spacing: var(--mainSpacing);
   cursor: pointer;
   font-size: 0.8rem;
+  outline: none;
 }
 .amount-btn {
   color: var(--primaryColor);
@@ -823,4 +825,13 @@ Hero
   justify-content: center;
   align-items: center;
   color: var(--primaryColor);
+}
+.max-limit{
+  color: transparent;
+  text-align: center;
+  font-size: 14px;
+  margin: 0.5rem 0;
+}
+.max-limit-show{
+  color: red !important;
 }

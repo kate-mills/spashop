@@ -2,8 +2,9 @@
 import React from 'react'
 import axios from 'axios'
 
-import url from '../utils/URL'
-import {filterForFeaturedProducts, flattenProducts} from '../utils/helpers'
+//import url from '../utils/URL'
+import localProducts from '../utils/localCart.js'
+import {filterForFeaturedProducts} from '../utils/helpers'
 
 export const ProductContext = React.createContext();
 
@@ -15,7 +16,7 @@ const ProductProvider = ({children}) => {
   const [featured, setFeatured] = React.useState([])
 
   React.useEffect(()=>{
-    axios
+    /*axios
       .get(`${url}/products`)
       .then(response =>{
         const featuredProducts = filterForFeaturedProducts(flattenProducts(response.data))
@@ -23,10 +24,12 @@ const ProductProvider = ({children}) => {
         setProducts( ((prev) => products)) 
         setFeatured(featuredProducts)
         setLoading(false)
-      });
-    return ()=>{
-
-    }
+      });*/
+    const featuredProducts = filterForFeaturedProducts(localProducts)
+    setProducts((prev)=>localProducts)
+    setFeatured((prev)=>featuredProducts)
+    setLoading(false)
+    return ()=>{ }
   }, []);
 
   return(

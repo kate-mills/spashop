@@ -21,11 +21,14 @@ const CartProvider = ({children})=>{
   };
 
   // increase amount property
-  const increaseQuantity = id =>{
+  const increaseQuantity = (id) =>{
     const newCart = [...cart].map(item => {
-      return item.id === id
-        ? { ...item , amount: item.amount + 1 }
-        : { ...item  }
+      if(item.id === id && item.amount+1<=item.max){
+        return {...item, amount: item.amount+1, maxLimit:item.amount+1>=item.max }
+      }
+      else{
+        return {...item, maxLimit: item.amount===item.max}
+      }
     })
     setCart(newCart);
   };
@@ -34,30 +37,29 @@ const CartProvider = ({children})=>{
   const decreaseQuantity = id =>{
     const newCart = [...cart].map(item => {
       return item.id === id && item.amount > 0
-        ? { ...item, amount: item.amount - 1 }
+        ? { ...item, amount: item.amount - 1 , maxLimit: false}
         : { ...item  }
     })
     setCart(newCart);
   };
 
   const addToCart = product => {
-    const {id, image, title, price} = product
+    const {id, image, title, price, max=6} = product
     const item = [...cart].find(item => item.id === id)
     if(item){
+      // customer hit maximum quantity limit
       increaseQuantity(id)
       return
     }
     else{
-      const newItem = {id, image, title, price, amount: 1}
+      const newItem = {id, image, title, price, amount: 1, max, maxLimit:false}
       const newCart = [...cart, newItem]
       setCart(newCart);
     }
-    
   };
 
   const clearCart = () => {
     setCart([])
-
   };
 
 
