@@ -25,7 +25,7 @@ Variables
   --mainBlack: #4c4c4c;
   --mainGrey: #DBDBDB;
   --darkGrey: #B6B6B6;
-  --mainRed: #bd0303;
+  --mainRed: #9e3aa3;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.3rem;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -73,6 +73,7 @@ ul {
 a {
   text-decoration: none;
   color: var(--mainBlack);
+  font-weight: 400;
 }
 img {
   width: 100%;
@@ -459,6 +460,7 @@ Cart Link
   margin-right: 10px;
   font-weight: bolder;
 }
+/*
 .cart-link-total {
   display: block;
   position: absolute;
@@ -470,6 +472,26 @@ Cart Link
   font-size: 1rem;
   color: var(--mainWhite);
 }
+*/
+
+
+
+.cart-link-total {
+    display: flex;
+    position: absolute;
+    background: var(--primaryColor);
+    top: -13px;
+    right: -15px;
+    padding: 0rem 0.4rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--mainWhite);
+    min-width: 31px;
+    min-height: 29px;
+    align-items: center;
+    justify-content: center;
+}
+
 /* 
 ====== 
 Login Form
@@ -569,7 +591,7 @@ Alert
   transform: translate(-50%, -50%);
   display: none;
   z-index: 10;
-  background: green;
+  background: var(--primaryColor);
   width: 24rem;
   padding: 2.5rem 1.5rem;
   text-align: center;
@@ -833,5 +855,5 @@ Hero
   margin: 0.5rem 0;
 }
 .max-limit-show{
-  color: red !important;
+  color: #9e3aa3 !important;
 }
