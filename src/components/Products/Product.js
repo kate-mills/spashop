@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import PropTypes from 'prop-types'
+import {formatPrice} from '../../utils/helpers'
+
 
 const Product = (props) => {
   const { id, title, image, price, max} = props
@@ -13,7 +15,7 @@ const Product = (props) => {
     </div>
     <div className="product-footer">
       <p className="product-title">{title || "Sorry - out of stock"}</p>
-      <p className="product-price">{price || 0}</p>
+      <p className="product-price">{formatPrice(price) || 0}</p>
     </div>
     </article>
 }

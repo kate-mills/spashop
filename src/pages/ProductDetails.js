@@ -2,6 +2,7 @@ import React from "react";
 import {useParams, useHistory} from 'react-router-dom'
 import {ProductContext} from '../context/products'
 import {CartContext} from '../context/cart'
+import {formatPrice} from '../utils/helpers'
 
 // import Product from '../components/Products/Product'
 import Loading from '../components/Loading'
@@ -25,7 +26,8 @@ const ProductDetails = () =>{
       <img src={product.image} alt={product.title} className="single-product-image"/>
       <article className="">
         <h1>{product.title}</h1>
-        <h2>${product.price}</h2>
+        <p style={{marginBottom: '2.5rem', marginTop: '0'}}><a href="https://michelecorleyclinicalskincare.com">Michele Corley Clincial Skincare</a></p>
+        <h2>{formatPrice(product.price)}</h2>
         <p>{product.description}</p>
         <button 
           onClick={
